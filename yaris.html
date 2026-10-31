@@ -315,7 +315,7 @@ function showTab(id){
 tabs.forEach(b=>b.addEventListener("click",()=>{ try{history.replaceState(null,"","#/"+b.dataset.tab);}catch(e){} showTab(b.dataset.tab); window.scrollTo(0,0); }));
 
 /* ---------- kit checkboxes ---------- */
-document.querySelectorAll("#kit input").forEach(c=>{
+document.querySelectorAll("#kit input, #todo input, #teyit input").forEach(c=>{
   try{ c.checked = localStorage.getItem("mt_"+c.dataset.k)==="1"; }catch(e){}
   c.addEventListener("change",()=>{ try{localStorage.setItem("mt_"+c.dataset.k, c.checked?"1":"0");}catch(e){} });
 });
